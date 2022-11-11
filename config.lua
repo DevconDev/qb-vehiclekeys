@@ -7,8 +7,10 @@ Config.LockNPCParkedCars = true -- Lock state for NPC parked cars [true = locked
 -- Lockpick Settings
 Config.RemoveLockpickNormal = 0.5 -- Chance to remove lockpick on fail
 Config.RemoveLockpickAdvanced = 0.2 -- Chance to remove advanced lockpick on fail
+if not IsPedInAnyVehicle(ped, false) then
 Config.LockPickDoorEvent = function() -- This function is called when a player attempts to lock pick a vehicle
     TriggerEvent('qb-lockpick:client:openLockpick', LockpickFinishCallback)
+    end
 end
 
 -- Carjack Settings
